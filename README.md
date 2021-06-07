@@ -93,7 +93,36 @@ Mac <-> Tunnelblick <-> socat/service <-> OpenVPN Server <-> Containers
 docker build --file openvpn.dockerfile --tag openvpn:local .
 ```
 
-### 将values.yaml文件里的目录配置改为您存放该项目的目录。
+### 在Kubernetes下运行OpenVPN
+
+1. 安装 [`helm`](http://helm.sh) (Kubernetes下的包管理工具).
+
+2. 创建local目录，并将values.yaml文件拷贝到local目录下，然后修改`local/values.yaml`相关配置:
+
+``` Text
+dirPaths:
+  # The project dir.
+  data: /tmp/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn
+  # Local dir to hold generated files.
+  local: /tmp/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn/local
+  # Local dir to hold generated server configs.
+  configs: /tmp/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn/local/configs
+```
+
+3. 运行OpenVPN 服务：
+```bash
+helm install -n docker-for-mac-openvpn --namespace docker-for-mac -f local/values.yaml .
+```
+
+### Configure Client
+
+现在，您将在`./local/docker-for-mac.ovpn` 获得客户端配置文件。 在客户端配置底部添加您想要访问的子网，如下所示，并连接到本地 OpenVPN 服务器。
+> 并将remote端口改为`31194`(也就是OpenVPN server的对外端口。)
+
+``` Config
+route 172.16.0.0 255.255.0.0
+route 10.96.0.1 255.240.0.0
+```
 
 
 ## 参考文档：

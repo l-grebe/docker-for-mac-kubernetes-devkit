@@ -43,6 +43,12 @@ strict-order
 server=/cluster.local/127.0.0.1#20053
 ```
 ```bash
+# /etc/resolv.dnsmasq.conf文件内容：
+nameserver 127.0.0.1
+nameserver 114.114.114.114
+nameserver 8.8.8.8
+```
+```bash
 # 启动dnsmasq服务
 sudo brew service start dnsmasq
 # 查看dnsmasq服务运行情况

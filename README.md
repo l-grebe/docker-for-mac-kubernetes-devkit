@@ -84,9 +84,17 @@ Mac <-> Tunnelblick <-> socat/service <-> OpenVPN Server <-> Containers
 
 ### 准备工作
 
-1. 安装 [`Tunnelblick`](https://tunnelblick.net/downloads.html) (一个开源的GUI OpenVPN client for Mac).
+1. 安装 [`Tunnelblick`](https://tunnelblick.net/downloads.html) (一个开源的GUI OpenVPN client for Mac)。
 
-2. Change into the `docker-for-mac-openvpn` directory.
+2. 切换到 `docker-for-mac-openvpn` 目录。
+
+### 构建镜像
+```
+docker build --file openvpn.dockerfile --tag openvpn:local .
+```
+
+### 将values.yaml文件里的目录配置改为您存放该项目的目录。
+
 
 ## 参考文档：
 - <https://github.com/pengsrc/docker-for-mac-kubernetes-devkit>

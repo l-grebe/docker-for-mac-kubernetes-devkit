@@ -13,7 +13,7 @@ image:
 service:
   # type: LoadBalancer
   type: NodePort
-  port: 1194
+  port: 31194
 
 dirPaths:
   # 项目目录

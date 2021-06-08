@@ -17,8 +17,8 @@ service:
 
 dirPaths:
   # 项目目录
-  data: /Users/husy/Documents/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn
+  data: /tmp/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn
   # 生成的 OpenVPN Client 的配置文件会放到这里
-  local: /Users/husy/Documents/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn/local
+  local: /tmp/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn/local
   # 生成的 OpenVPN Server 的配置文件会放到这里
-  configs: /Users/husy/Documents/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn/local/configs
+  configs: /tmp/docker-for-mac-kubernetes-devkit/docker-for-mac-openvpn/local/configs

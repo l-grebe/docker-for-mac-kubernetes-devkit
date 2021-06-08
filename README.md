@@ -97,7 +97,7 @@ docker build --file openvpn.dockerfile --tag openvpn:local .
 
 1. 安装 [`helm`](http://helm.sh) (Kubernetes下的包管理工具).
 
-2. 创建local目录，并将values.yaml文件拷贝到local目录下，然后修改`local/values.yaml`相关配置:
+2. 拷贝`values.yaml.default`为`values.yaml`，然后修改`values.yaml`相关配置:
 
 ``` Text
 dirPaths:

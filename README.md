@@ -111,7 +111,7 @@ dirPaths:
 
 3. 运行OpenVPN 服务：
 ```bash
-helm install -n docker-for-mac-openvpn --namespace docker-for-mac -f local/values.yaml .
+helm install -f local/values.yaml . --generate-name
 ```
 
 ### Configure Client

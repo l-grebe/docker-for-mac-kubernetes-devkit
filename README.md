@@ -111,7 +111,7 @@ dirPaths:
 
 3. 运行OpenVPN 服务：
 ```bash
-helm install -f local/values.yaml . --generate-name
+helm install -f values.yaml . --generate-name
 ```
 
 ### 配置Client并启动Tunnelblick

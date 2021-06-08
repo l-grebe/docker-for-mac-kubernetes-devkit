@@ -129,6 +129,10 @@ route 172.16.0.0 255.255.0.0
 route 10.96.0.1 255.240.0.0
 ```
 
+到这里，连上vpn，就能通过域名访问kubernetes服务了！
+```
+http://rabbitmq.default.svc.cluster.local:15672/#/
+```
 
 ## 参考文档：
 - <https://github.com/pengsrc/docker-for-mac-kubernetes-devkit>

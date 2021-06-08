@@ -116,8 +116,13 @@ helm install -f values.yaml . --generate-name
 
 ### 配置Client并启动Tunnelblick
 
-现在，您将在`./local/docker-for-mac.ovpn` 获得客户端配置文件。 在客户端配置底部添加您想要访问的子网，如下所示，并连接到本地 OpenVPN 服务器。
-> 并将remote端口改为`31194`(也就是OpenVPN server的对外端口。)
+现在，您将在`./local/docker-for-mac.ovpn` 获得客户端配置文件，对配置文件做如下更改：
+
+1. 将remote端口改为`31194`(也就是OpenVPN server的对外端口。)
+
+2. 添加`comp-lzo no`该行配置
+
+3. 在客户端配置底部添加您想要访问的子网，如下所示，并连接到本地 OpenVPN 服务器。
 
 ``` Config
 route 172.16.0.0 255.255.0.0

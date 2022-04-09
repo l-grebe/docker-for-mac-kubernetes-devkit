@@ -21,7 +21,7 @@ if [ ! -f ${CLIENT_CONFIG} ]; then
     sed -i "s|^push|#push|" ${SERVER_CONFIG}
     sed -i "s|^route|#route|" ${SERVER_CONFIG}
     sed -i "s|^port 1194|port 31194|" ${SERVER_CONFIG}
-    sed -i "s|port 1194|port 31194|" ${CLIENT_CONFIG}
+    sed -i "s|localhost 1194|port 31194|" ${CLIENT_CONFIG}
     sed -i "s|^redirect-gateway|#redirect-gateway|" ${CLIENT_CONFIG}
 fi
 

@@ -2,6 +2,8 @@
 
 # build:
 # docker build --file openvpn.dockerfile --tag openvpn:local .
+# mac build:
+# docker buildx build --platform linux/amd64 --file openvpn.dockerfile --tag openvpn:local .
 
 # Smallest base image
 FROM alpine:latest
